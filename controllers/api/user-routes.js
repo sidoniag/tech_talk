@@ -9,20 +9,26 @@ router.post('/', (req, res) => {
     username: req.body.username,
     password: req.body.password,
   })
-    .then((dbUserData) => {
-      req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
-        req.session.loggedIn = true;
-
-        res.json(dbUserData);
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  .then(dbUserData => res.json(dbUserData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json({ message: "fail create again"});
+  });
 });
+//     .then((dbUserData) => {
+//       req.session.save(() => {
+//         req.session.user_id = dbUser.id;
+//         req.session.username = dbUser.username;
+//         req.session.loggedIn = true;
+
+//         res.json(dbUser);
+//       });
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       res.status(500).json({ message: "fail at create" });
+//     });
+// });
 
 // POST login
 router.post('/login', (req, res) => {
@@ -83,7 +89,7 @@ router.delete('/:id', (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      res.status(500).json(err);
+      res.status(500).json({ message: "fail at delete"});
     });
 });
 
