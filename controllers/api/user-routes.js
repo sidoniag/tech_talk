@@ -1,7 +1,17 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
-
+// get all users
+router.get('/', (req, res) => {
+    User.findAll({
+        attributes: { exclude: ['password'] }
+    })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({ message: "all users" });
+    });
+});
 // POST /api/users
 router.post('/', (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
