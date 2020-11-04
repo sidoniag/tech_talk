@@ -1,6 +1,6 @@
-// const Post = require('./Post');
+const Post = require('./Post');
 const User = require('./User');
-// const Comment = require('./Comment');
+const Comment = require('./Comment');
 
 // create associations
 // user can make many post
@@ -29,5 +29,5 @@ const User = require('./User');
 //     foreignKey: 'post_id'
 //   });
 
-module.exports = { User };
-// module.exports = { User, Post, Comment };
+// module.exports = { User };
+module.exports = { User, Post, Comment };
