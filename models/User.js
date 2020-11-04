@@ -17,7 +17,7 @@ class User extends Model {}
 // create fields/columns for User model
 User.init(
   {
-    user_id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -33,7 +33,14 @@ User.init(
       validate: {
         len: [4]
       }
-    }
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    },
   },
   // {
   //   hooks: {
