@@ -1,1 +1,24 @@
-# tech_talk
+# Tech Talk
+
+## Description
+This application is a place for people to share their thoughts about tech and maybe learn a little too. 
+
+## Table of Contents
+* [Technologies](#technologies)
+* [HomePage](#hpmepage)
+* [Deployment](#deployment)
+* [Questions](#questions)
+
+## Technologies
+* Express.js
+* MongoDB
+* Mongoose
+* Moment.js
+
+## Home Page
+
+<img src="./tt_home.png">
+
+## Questions
+Visit my [github](https://github.com/sidoniag)<br>
+Questions here: <seekersig@gmail.com>
