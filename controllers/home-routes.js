@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Post, User } = require('../models');
 
 router.get('/', (req, res) => {
-    console.log(req.session)
     Post.findAll({
       attributes: ['id', 'title', 'post_body', 'created_at'],
         include: [

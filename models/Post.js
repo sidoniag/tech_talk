@@ -3,19 +3,6 @@ const sequelize = require('../config/connection');
 
 // // create our Post model
 class Post extends Model {}
-  // post_body (req, res) {
-  // return Post.findOne.create({
-  //   where: {
-  //     id: body.post_id
-  //   },
-  //   attributes: [
-  //     'id',
-  // 'title',
-  //     'post_body',
-  //     'username',
-  //   ]
-  // });
-// };
 
 // // create fields/columns for Post model
 Post.init(
@@ -31,7 +18,7 @@ Post.init(
       allowNull: false
     },
     post_body: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     user_id: {
