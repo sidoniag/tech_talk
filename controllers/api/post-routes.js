@@ -1,16 +1,15 @@
 const router = require('express').Router();
-// const sequelize = require('../../config/connection');
+const sequelize = require('../../config/connection');
 const { Post, User } = require('../../models');
 
-// // get all users
+// // get all posts
 router.get('/', (req, res) => {
-  console.log('======================');
+  // console.log('======================');
   Post.findAll({
     attributes: [
       'id',
       'title',
       'post_body',
-      'username',
       'created_at'
     ],
     include: [
@@ -23,7 +22,7 @@ router.get('/', (req, res) => {
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
       console.log(err);
-      res.status(500).json({ message: "users and posts"});
+      res.status(500).json({ message: "error: users and posts"});
     });
 });
 
@@ -81,15 +80,6 @@ router.post('/', (req, res) => {
     });
 });
 
-// router.put('/upvote', (req, res) => {
-//   // custom static method created in models/Post.js
-//   Post.upvote(req.body, { Vote })
-//     .then(updatedPostData => res.json(updatedPostData))
-//     .catch(err => {
-//       console.log(err);
-//       res.status(400).json(err);
-//     });
-// });
 
 // router.put('/:id', (req, res) => {
 //   Post.update(

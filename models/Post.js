@@ -10,6 +10,7 @@ class Post extends Model {}
   //   },
   //   attributes: [
   //     'id',
+  // 'title',
   //     'post_body',
   //     'username',
   //   ]
@@ -32,9 +33,6 @@ Post.init(
     post_body: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isURL: true
-      }
     },
     user_id: {
       type: DataTypes.INTEGER,
