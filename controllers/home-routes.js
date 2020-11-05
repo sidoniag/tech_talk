@@ -1,25 +1,28 @@
 const router = require('express').Router();
-// const { Post, User, Comment } = require('../models');
+const { Post, User } = require('../models');
 
 router.get('/', (req, res) => {
-  res.render('homepage');
+    console.log(req.session)
+    Post.findAll({
+      attributes: ['id', 'title', 'post_body', 'created_at'],
+        include: [
+          {
+          model: User,
+          attributes: ['username']
+        }
+      ]
+    })
+        .then(dbPostData => {
+          //console.log(dbPostData[0]);
+          const posts = dbPostData.map(post => post.get({ plain: true }));
+          res.render('homepage', {posts}
+           );
+        })
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
 });
-
-// router.get('/', (req, res) => {
-//     console.log(req.session)
-//     Post.findAll({
-//         include: [User],
-//     })
-//         .then(dbPostData => {
-//           //console.log(dbPostData[0]);
-//           const posts = dbPostData.map(post => post.get({ plain: true }));
-//           res.render('homepage', { posts });
-//         })
-//         .catch(err => {
-//           console.log(err);
-//           res.status(500).json(err);
-//         });
-// });
 
 // router.get("/post/:id", (req,res) => {
 //   Post.findByPk(req.params.id, {
