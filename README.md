@@ -11,9 +11,12 @@ This application is a place for people to share their thoughts about tech and ma
 
 ## Technologies
 * Express.js
-* MongoDB
-* Mongoose
-* Moment.js
+* MySQL2
+* Sequelize
+* Node js
+* Handlebars.js
+* Bcrypt
+* Express
 
 ## Home Page
 
