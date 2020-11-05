@@ -2,17 +2,18 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // // create our Post model
-// class Post extends Model {
-//   return Post.findOne({
-//     where: {
-//       id: body.post_id
-//     },
-//     attributes: [
-//       'id',
-//       'post_body',
-//       'username',
-//     ]
-//   });
+class Post extends Model {}
+  // post_body (req, res) {
+  // return Post.findOne.create({
+  //   where: {
+  //     id: body.post_id
+  //   },
+  //   attributes: [
+  //     'id',
+  //     'post_body',
+  //     'username',
+  //   ]
+  // });
 // };
 
 // // create fields/columns for Post model
@@ -24,7 +25,7 @@ Post.init(
       primaryKey: true,
       autoIncrement: true
     },
-    username: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false
     },

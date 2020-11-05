@@ -8,6 +8,7 @@ router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
       'id',
+      'title',
       'post_body',
       'username',
       'created_at'
@@ -66,19 +67,19 @@ router.get('/', (req, res) => {
 //     });
 // });
 
-// router.post('/', (req, res) => {
-//   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
-//   Post.create({
-//     title: req.body.title,
-//     post_url: req.body.post_url,
-//     user_id: req.body.user_id
-//   })
-//     .then(dbPostData => res.json(dbPostData))
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
+router.post('/', (req, res) => {
+  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+  Post.create({
+    title: req.body.title,
+    post_url: req.body.post_url,
+    user_id: req.body.user_id
+  })
+    .then(dbPostData => res.json(dbPostData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 // router.put('/upvote', (req, res) => {
 //   // custom static method created in models/Post.js
