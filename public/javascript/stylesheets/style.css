@@ -12,7 +12,7 @@
   
   a {
     text-decoration: none;
-    color: black;
+    color: red;
     font-weight: bold;
     transition: color .1s;
   }
@@ -36,10 +36,12 @@
     background-color: black;
   }
   
-  .navbar {
-    flex-wrap: nowrap;
-    flex: auto;
-  }
+   .navbar {
+border-width: 3rem;
+border-color: #333;
+
+   }
+  
   .post-list {
     margin: 0;
     padding: 0;
@@ -78,7 +80,7 @@
     flex-direction: column;
   }
   
-  header {
+  .header .a {
     border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
