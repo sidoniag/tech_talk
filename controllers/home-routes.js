@@ -1,5 +1,9 @@
-// const router = require('express').Router();
+const router = require('express').Router();
 // const { Post, User, Comment } = require('../models');
+
+router.get('/', (req, res) => {
+  res.render('homepage');
+});
 
 // router.get('/', (req, res) => {
 //     console.log(req.session)
@@ -59,4 +63,4 @@
 //     res.render("signup");
 //   });
 
-// module.exports = router;
+module.exports = router;
