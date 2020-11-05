@@ -36,6 +36,10 @@
     background-color: black;
   }
   
+  .navbar {
+    flex-wrap: nowrap;
+    flex: auto;
+  }
   .post-list {
     margin: 0;
     padding: 0;
