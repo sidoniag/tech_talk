@@ -3,15 +3,15 @@
   <li>
     <article class="post">
       <div class="title">
-        <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
-        <span>({{post.post_url}})</span>
+        <a href="{{post.post_body}}" target="_blank">{{post.title}}</a>
+        <span>({{post.post_body}})</span>
       </div>
-      <div class="meta">
+      {{!-- <div class="meta">
         {{post.vote_count}} point(s) by {{post.user.username}} on
         {{post.created_at}}
         |
         <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-      </div>
+      </div> --}}
     </article>
   </li>
   {{/each}}
