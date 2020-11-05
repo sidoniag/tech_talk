@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/sidoniag/tech_blog/issues"
   },
-  "homepage": "https://github.com/sidoniag/tech_blog",
+  "homepage": "/",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
