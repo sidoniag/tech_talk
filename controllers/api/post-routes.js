@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     attributes: [
       'id',
       'title',
-      'post_body',
+      'text',
       'created_at',
     ],
     include: [
@@ -32,7 +32,7 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'post_body',
+      'text',
       'title',
       'created_at',
     ],
@@ -65,19 +65,19 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
-  Post.create({
-    title: req.body.title,
-    post_body: req.body.post_body,
-    user_id: req.session.user_id
-  })
-    .then(dbPostData => res.json(dbPostData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+// router.post('/', (req, res) => {
+//   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+//   Post.create({
+//     title: req.body.title,
+//     text: req.body.text,
+//     user_id: req.session.user_id
+//   })
+//     .then(dbPostData => res.json(dbPostData))
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
 
 
 // router.put('/:id', (req, res) => {
@@ -104,23 +104,23 @@ router.post('/', (req, res) => {
 //     });
 // });
 
-// router.delete('/:id', (req, res) => {
-//   Post.destroy({
-//     where: {
-//       id: req.params.id
-//     }
-//   })
-//     .then(dbPostData => {
-//       if (!dbPostData) {
-//         res.status(404).json({ message: 'No post found with this id' });
-//         return;
-//       }
-//       res.json(dbPostData);
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
+router.delete('/:id', (req, res) => {
+  Post.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 module.exports = router;
