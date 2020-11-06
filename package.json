@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sidoniag/tech_blog.git"
+    "url": "git+https://github.com/sidoniag/tech_talk.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sidoniag/tech_blog/issues"
+    "url": "https://github.com/sidoniag/tech_talk/issues"
   },
-  "homepage": "/",
+  "homepage": "https://github.com/sidoniag/tech_talk",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
