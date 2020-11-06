@@ -1,36 +1,17 @@
-<ol class="post-list">
-  {{#each posts as |post|}}
-  <li>
-    <article class="post">
+<div class="container">
+  <div class="row">
+    {{#each posts as |post|}}
+    <div class="col-4">
+
       <div class="title">
         <a href="{{post_body}}" target="_blank">{{title}}</a>
       </div>
-    <div class="postBody">
-      {{post_body}}
-    </div>
-    </article>
-  </li>
-  {{/each}}
-</ol>
+      <div class="body">
+        {{post_body}}
+      </div>
 
-{{!-- <div class="container">
-  <div class="row">
-    <div class="col">
-      1 of 2
     </div>
-    <div class="col">
-      2 of 2
-    </div>
+    {{/each}}
   </div>
-  <div class="row">
-    <div class="col">
-      1 of 3
-    </div>
-    <div class="col">
-      2 of 3
-    </div>
-    <div class="col">
-      3 of 3
-    </div>
-  </div>
-</div> --}}
+
+</div>
