@@ -4,7 +4,6 @@ const { Post, User } = require('../../models');
 
 // // get all posts
 router.get('/', (req, res) => {
-  // console.log('======================');
   Post.findAll({
     attributes: [
       'id',
@@ -22,7 +21,7 @@ router.get('/', (req, res) => {
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
       console.log(err);
-      res.status(500).json({ message: "error: users and posts"});
+      res.status(500).json(err);
     });
 });
 
@@ -53,6 +52,7 @@ router.get('/:id', (req, res) => {
     ]
   })
     .then(dbPostData => {
+      console.log(dbPostdata);
       if (!dbPostData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
