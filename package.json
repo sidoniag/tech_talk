@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "homepage": "https://sidoniag.github.io/tech_talk/",
+  
   "scripts": {
     "test": "jest",
     "seeds": "node seeds/index.js"
