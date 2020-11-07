@@ -22,6 +22,9 @@ This application is a place for people to share their thoughts about tech and ma
 
 <img src="./tt_home.png">
 
+## Deployment
+[Heorku](https://tech-talk-sig.herokuapp.com/)
+
 ## Questions
 Visit my [github](https://github.com/sidoniag)<br>
 Questions here: <seekersig@gmail.com>
